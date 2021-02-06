@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="100"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/file_name_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="File Name" />
+
+            <EditText
+                android:id="@+id/file_content_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type the file content" />
+
+            <RadioGroup
+                android:id="@+id/target_folder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_internal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Internal" />
+
+                <RadioButton
+                    android:id="@+id/radio_external"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="External" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/create_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREATE" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filesListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/form" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
